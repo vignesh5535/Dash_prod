@@ -1,13 +1,37 @@
+var pgLogin =  document.getElementById("login");
+var pgCont =  document.getElementById("cont");
+
+var sUserMin =  document.getElementById("s_min");
+var sUserMax =  document.getElementById("s_max");
+var pUser =  document.getElementById("p_user");
+
 var bProd =  document.getElementById("bt_prod");
 var bQly =  document.getElementById("bt_qly");
 var tblProd =  document.getElementById("tb_prod");
 var tblQly =  document.getElementById("tb_Qly");
+var tblWel =  document.getElementById("tb_welcome");
+
 
 var navMin =  document.getElementById("nav_min");
 var navMax =  document.getElementById("nav_max");
 var secMain =  document.getElementById("main");
 
 var pageTitle =  document.getElementById("page_title");
+var bLogout =  document.getElementById("bt_logOut");
+
+// Get the username from the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get('username');
+console.log(username); // Output: "exampleUser"
+
+let firstLetter = username[0];
+sUserMin.innerHTML = firstLetter;
+sUserMax.innerHTML = username;
+pUser.innerHTML = username;
+
+function onClickLogout(){
+    window.location.href = "login.html"; 
+}
 
 
 function fProdButton() {
@@ -15,7 +39,7 @@ function fProdButton() {
     bQly.style.background = 'White';
     tblProd.style.display = 'block';
     tblQly.style.display = 'none';
-    pageTitle.innerHTML = 'Production Dashboard'
+    tblWel.style.display = 'none';
 }
 
 function fQlyButton() {
@@ -23,7 +47,7 @@ function fQlyButton() {
     bQly.style.background = '#4ac3b7';
     tblProd.style.display = 'none';
     tblQly.style.display = 'block';
-    pageTitle.innerHTML = 'Quality Dashboard'
+    tblWel.style.display = 'none';
 }
 
 function nMaxIn() {
