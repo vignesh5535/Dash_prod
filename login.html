@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AWS Login</title>
+    
+    <link rel="stylesheet" href="login.css">
+  </head>
+
+
+    <!-- Body Starts -->
+  <body>
+
+        <div id="'login" class="login">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="submitLoginForm(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <input type="submit" value="Login">
+            </form>
+        </div>
+
+      <!-- Script  -->
+      <script src="login.js"></script>
+  </body>
+</html>
