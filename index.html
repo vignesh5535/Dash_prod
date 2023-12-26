@@ -3,17 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>AWS Dashboard</title>
+    
     <link rel="stylesheet" href="index.css">
+  </head>
+
+
+    <!-- Body Starts -->
   <body>
+
+
    
-    <div class="container">
+    <div class="container" id="cont" >
 
          <!-- Side Bar -->
          <nav id="nav_min" onmouseover="nMaxIn()" onmouseout="">
             <ul>
-              <li><a href="#" class="logo">
-                <span class="nav-item">U</span>
+              <li><a href="#" class="n_min">
+                <span class="nav-item" id="s_min">U</span>
               </a></li>
 
             </ul>
@@ -21,17 +28,12 @@
       
 
         <nav id="nav_max" onmouseover="nMaxIn()" onmouseout="nMaxOut()" style="display: none;">
+          <h1 class="logo" id="s_max">Username</h1>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
           <ul>
-            <li><a href="#" class="logo">
-              <span class="nav-item">Username</span>
-            </a></li>
             <li><a href="#">
               <i class="fas fa-menorah"></i>
               <span class="nav-item">Daily Report</span>
-            </a></li>
-            <li><a href="#">
-              <i class="fas fa-menorah"></i>
-              <span class="nav-item">Weekly Report</span>
             </a></li>
             <li><a href="#">
               <i class="fas fa-comment"></i>
@@ -43,9 +45,9 @@
             </a></li>
 
             <!-- Logout Code -->
-            <li><a href="#" class="logout">
+            <li><a href="#" class="logout" >
               <i class="fas fa-sign-out-alt"></i>
-              <span class="nav-item">Log out</span>
+              <span class="nav-item"><button id="bt_logOut" onclick="onClickLogout()">Logout</button></span>
             </a></li>
           </ul>
         </nav>
@@ -61,7 +63,7 @@
           <div class="users">
             <div class="card">
               <img src="./pic/img1.jpg">
-              <h4>Username</h4> 
+              <h4 id="p_user"> Username</h4> 
               <p>Digital associate</p>
 
               <button>Profile</button>
@@ -86,6 +88,12 @@
 
           </div>
 
+          <!-- Welcome section  -->
+          <section class="Production" id="tb_welcome" >
+            <h2>Welcome to Dashboard. Please select an option.</h2>
+          </section>
+
+
 
     
           <!-- Production Section -->
@@ -98,9 +106,13 @@
                     <th>Date</th>
                     <th>User</th>
                     <th>Production Hours</th>
+                    <th>NPT Hours</th>
+                    <th>OT Hours</th>
+                    <th>Training Hours</th>
                     <th>Production Count</th>
+                    <th>Training Count</th>
                     <th>Expected Count</th>
-                    <th>Production percentage</th>
+                    <th>Achieved Count</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -108,9 +120,13 @@
                     <td>01-01-2023</td>
                     <td>Username</td>
                     <td>8</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>300</td>
+                    <td>0</td>
                     <td>300</td>
                     <td>300</td>
-                    <td></td>
                   </tr>
                   <tr class="active">
                     <td>01-01-2023</td>
